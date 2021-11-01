@@ -12,9 +12,9 @@ public class Mindste_tal {
         Double b = s.nextDouble();
         Double c = s.nextDouble();
 
-        if(a<b && a<c){
+        if(a<=b && a<=c){
             System.out.println(a);
-        } else if((b<a || b.equals(a)) && b<c){
+        } else if(b<=a && b<=c){
             System.out.println(b);
         } else {
             System.out.println(c);
