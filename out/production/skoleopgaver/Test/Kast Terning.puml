@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+"Spiller" as Spiller
+
+
+
+Package Spil {
+(Kast terninger) as kast
+
+}
+
+Spiller -- kast
+
+@enduml

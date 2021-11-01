@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/class-diagram
+skinparam style strictuml
+skinparam DefaultFontname Arial
+skinparam DefaultFontSize 16
+'skinparam DefaultFontStyle Bold
+'skinparam ArrowThickness 1
+skinparam ArrowColor black
+'skinparam BackGroundColor lightgreen
+'skinparam RoundCorner 10
+'skinparam class {
+  '  BorderColor black
+ '   BackGroundColor white
+'}
+'skinparam linetype polyline
+skinparam linetype ortho
+
+hide empty members
+
+class "Spiller" as S {
+Nr.
+Point
+}
+class "Pointsystem" as PS {
+
+
+}
+class "Terningslag" as TS{
+
+
+}
+class "Terning" as T{
+Værdi
+}
+
+TS "1" -- "2" T : Indeholder >
+S "1" -r- "1" TS : \t Laver \t
+PS "1" -l-- "0" TS : \t\t
+
+
+
+@enduml

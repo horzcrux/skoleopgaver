@@ -1,0 +1,60 @@
+@startuml
+'https://plantuml.com/class-diagram
+'!define LIGHTBLUE
+'!includeurl https://raw.githubusercontent.com/Drakemor/RedDress-PlantUML/master/style.puml
+
+skinparam style strictuml
+skinparam DefaultFontname Arial
+skinparam DefaultFontSize 16
+'skinparam DefaultFontStyle Bold
+'skinparam ArrowThickness 1
+skinparam ArrowColor black
+'skinparam BackGroundColor lightgreen
+'skinparam RoundCorner 10
+skinparam class {
+    BorderColor black
+    BackGroundColor white
+}
+
+hide empty members
+
+
+class "Begivenhed" as Begivenhed {
+Navn
+Deltagerliste
+Tidspunkt
+Placering
+}
+
+class "Studerende" as Studerende {
+Studienummer
+Studiemail
+}
+
+class "Kursus" as Kursus {
+Kursus ID
+Tidspunkt
+Medlemmer
+}
+
+class "Skema" as Skema {
+Placering
+Undervisningsmaterialer
+Underviser
+}
+
+class "Notifikation" as Notifikation {
+Tidspunkt
+Placering
+}
+
+Begivenhed "1..1" -- "1" Skema
+Begivenhed "1" -- "1" Kursus : Indeholder <
+Begivenhed "1" -- "1" Studerende : Opretter
+Begivenhed "1" -right- "0..1" Notifikation
+Studerende "0..1" -- "1" Notifikation : Modtager
+Skema "1" -- "1" Kursus : Is played
+
+
+
+@enduml
